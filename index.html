@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Loft10 — Lounge Caffè Pavia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e5e2e1",
+            "on-background": "#1c1b1b",
+            "inverse-primary": "#ffb3ac",
+            "tertiary": "#005f7b",
+            "on-primary-container": "#fff2f0",
+            "surface-tint": "#ba1a20",
+            "outline-variant": "#e4beba",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#313030",
+            "surface-container-high": "#eae7e7",
+            "on-secondary-container": "#636262",
+            "secondary-fixed": "#e5e2e1",
+            "error": "#ba1a1a",
+            "surface-bright": "#fcf9f8",
+            "tertiary-fixed": "#bee9ff",
+            "primary-fixed": "#ffdad6",
+            "on-secondary-fixed-variant": "#474746",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#004d65",
+            "on-tertiary-container": "#e9f7ff",
+            "surface-container-low": "#f6f3f2",
+            "on-secondary-fixed": "#1c1b1b",
+            "on-primary-fixed": "#410003",
+            "primary": "#af101a",
+            "secondary": "#5f5e5e",
+            "inverse-on-surface": "#f3f0ef",
+            "on-primary-fixed-variant": "#930010",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#ffb3ac",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1c1b1b",
+            "on-surface-variant": "#5b403d",
+            "surface-dim": "#dcd9d9",
+            "secondary-fixed-dim": "#c8c6c5",
+            "outline": "#8f6f6c",
+            "tertiary-container": "#00799c",
+            "secondary-container": "#e2dfde",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#001f2a",
+            "background": "#fcf9f8",
+            "surface-container": "#f0eded",
+            "tertiary-fixed-dim": "#7bd1f8",
+            "surface": "#fcf9f8",
+            "surface-variant": "#e5e2e1",
+            "primary-container": "#d32f2f"
+          },
+          fontFamily: {
+            "headline": ["Newsreader"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #fcf9f8;
+      color: #1c1b1b;
+      font-family: 'Manrope', sans-serif;
+    }
+    .serif-italic {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+    }
+    .serif-bold {
+      font-family: 'Newsreader', serif;
+      font-weight: 700;
+    }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+    <a href="index.html" class="flex flex-col leading-none no-underline">
+      <div class="font-['Newsreader'] font-bold text-2xl tracking-tighter text-[#1c1b1b]">Loft10</div>
+      <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Lounge Caffè</div>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#af101a] font-semibold underline-offset-8 decoration-2 font-['Manrope'] font-medium text-sm uppercase tracking-widest transition-all duration-300 ease-in-out" href="index.html">Home</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="chi-siamo.html">Chi Siamo</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="menu.html">Menu</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="gallery.html">Gallery</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="contatti.html">Contatti</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2">
+        <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+      </div>
+      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-transform no-underline">
+        Prenota ora
+      </a>
+      <!-- Mobile hamburger -->
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl flex-col items-center justify-center gap-8 pt-24">
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="absolute top-6 right-6 text-[#1c1b1b]">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-[#af101a] font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html">Home</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="chi-siamo.html">Chi Siamo</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="menu.html">Menu</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="gallery.html">Gallery</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold text-sm tracking-wide no-underline mt-4">Prenota ora</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-12 px-6">
+      <div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-8">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-xs font-label font-bold uppercase tracking-widest text-on-surface/60">Lounge Caffè &amp; Mixology</span>
+          </div>
+          <h1 class="text-6xl md:text-8xl serif-bold tracking-tighter leading-tight text-on-surface">
+            L'essenza del <br />
+            <span class="serif-italic text-primary">tempo al Loft10</span>
+          </h1>
+          <p class="text-lg md:text-xl font-body text-on-surface/70 max-w-xl leading-relaxed">
+            Un rifugio urbano nel cuore di Pavia dove l'artigianalità del caffè incontra l'arte della mixology. Benvenuti al Loft10, il vostro salotto di design.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="menu.html" class="bg-primary text-on-primary px-10 py-5 rounded-full font-label font-bold text-lg shadow-xl shadow-primary/20 scale-100 hover:scale-105 active:scale-95 transition-all duration-300 no-underline inline-block">
+              Scopri il Menu
+            </a>
+            <a href="gallery.html" class="border-2 border-on-surface/10 hover:border-primary/40 px-10 py-5 rounded-full font-label font-bold text-lg transition-all no-underline inline-block text-on-surface">
+              Gallery
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+            <img class="w-full h-full object-cover" alt="Loft10 interior with vintage elements, typewriter and moka pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy1jprtFJLthxl94k3on_fJkUapyqRxwBc8mTa9gnrZNyYynGwAMy1a66fytS3umxFePG6ErWTLb4eZWuBymx5t_-G1wS1XtXaSx1wME5dy5XnZAJ0BSTl8RZRMOCHFG6-F9DSTNnr_V09RkSYaTas32uTR8G1ocaHr1qI_BobMijhOjIfkHuoFceMvwezc_-MfNsU9iYccniC4iuXZzqPTuMhQLbeIRdIVMu_S6o2UIbxAuZG1D14_E3nPG8cBtBbzw-PBUdLGBw" />
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-primary w-24 h-24 rounded-full flex items-center justify-center text-on-primary shadow-xl">
+            <span class="material-symbols-outlined text-4xl">coffee</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="py-24 bg-surface-container-low rounded-xl mx-4 md:mx-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          <div class="md:w-1/2 order-2 md:order-1">
+            <div class="grid grid-cols-2 gap-4">
+              <img class="rounded-xl w-full h-64 object-cover mt-8" alt="specialty coffee at Loft10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQlpNRkgMrEa5ecE4-Z87I2HXlulv28QrmGOi6z6sJ6iBjWLbYszgHS8uSWo0QPxafWp8cXg6ia1RCLeAVAlv8PObvSDSKyi7sedAW6SJ_D5h7OtE66jZ6oowKJ029r3FHutYgLHuQR_dUalUZaySgKj0O4J0LZd86Codyd8g3CzrPWl7_UVc2f6O-RdaCrvpRNMtAHI0-Pu5-Cy0MWQLOV-bRfWTU6-aZBn6lxCxN_SE6cS-CeOGxkzy7g2i0s3ydOU4Bp5mh6Vc" />
+              <img class="rounded-xl w-full h-64 object-cover" alt="signature cocktail at Loft10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQCmAHIg4YY_W754RKrZcvHJf7fWDaIoQvtJcKisFlhBS3SK59yXJe76UGobRAyoTbV_HA0CKqKIeU25FJEFSjCJyWktSsmXSpG0WBrPX7adXWeIQ0VuYWuPSwofYF7GuHIkSTJPIq4z6mYouy3SjeModE77-2938YKvB4dWkfVrUhcT09YT00bYPIKY-jknClSHsX0y6a16Vvq8x2QGVBiA4hFub_sQKs8JcK9aFqYC1L2hqlziCmqnulYX3CNprJG3mpxaDCKQU" />
+            </div>
+          </div>
+          <div class="md:w-1/2 space-y-6 order-1 md:order-2">
+            <h2 class="text-4xl md:text-5xl serif-bold text-on-surface tracking-tight">
+              Un'Esperienza Unica tra <br />
+              <span class="serif-italic">Design e Gusto</span>
+            </h2>
+            <p class="text-lg font-body text-on-surface/70 leading-relaxed">
+              Al Loft10 non serviamo solo caffè e cocktail, curiamo momenti. Dalla prima luce dell'alba con miscele selezionate alla vibrante energia della sera, ogni dettaglio nel nostro spazio a Pavia è pensato per elevare i vostri sensi.
+            </p>
+            <div class="flex items-center gap-6 pt-4">
+              <div class="flex -space-x-4">
+                <div class="w-12 h-12 rounded-full border-4 border-surface-container-low bg-primary/20 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">coffee</span>
+                </div>
+                <div class="w-12 h-12 rounded-full border-4 border-surface-container-low bg-primary/40 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">local_bar</span>
+                </div>
+                <div class="w-12 h-12 rounded-full border-4 border-surface-container-low bg-primary/60 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">music_note</span>
+                </div>
+              </div>
+              <span class="font-label font-bold text-sm tracking-wide text-on-surface/40 uppercase">Vibrazioni Loft10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selection Section: Bento Grid -->
+    <section class="py-32 px-6">
+      <div class="container mx-auto">
+        <div class="mb-16 text-center">
+          <h2 class="text-5xl serif-bold mb-4">La Nostra Selezione</h2>
+          <p class="text-on-surface/60 font-body uppercase tracking-widest text-sm">Qualità in ogni dettaglio</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+          <a href="menu.html#caffetteria" class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-highest block">
+            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Loft10 coffee bar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKNK1zvur7DcV-gLYRjBnSm4ppd9VJ8RESlqdjH7tH_JCnwWdf_mBSq1vPZKOhHL4p-GvnUsUqHfsjEz0KUh5SaP_Ke7pLBxdSLXL_fUpT0VbTE6Yy_pdVB116HlPq69pJ5ltN-3SxgK9kvIeEziLtzCUos_ch6EdhKycYx4usaMO7ZPPKOWSjzOLRXkLAAYLIHW5wjXx3k_HfMNFN97-ujJKnwLaIjCIrg0xaG0nFeJNt7kEJoITHSPMriA-o7LVPpridwXq0I7o" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-on-primary">
+              <h3 class="text-3xl serif-bold mb-2">Lounge Caffè</h3>
+              <p class="text-on-primary/80 font-body max-w-sm">Dalla colazione artigianale ai momenti di relax pomeridiani con le migliori miscele.</p>
+            </div>
+          </a>
+          <a href="menu.html#cocktails" class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-high block">
+            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Loft10 premium spirits" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCezHAdzTgYxNkQ2o34EL2JiSKvcYdL-x53A1SK_4HNJkcIXKLs6R4eFBWXQmuSIarY41S2RCCM39eycIkFTP_jf2g89G9LFvoPV0i_thIAhFv2UbH-WIYeM5HMHgbs3VdxXV14MUwoGDsIu9Yy1I40uX-2iATlwQQtpTzwKuuVyYVz8kB0WSZ0k9DijAZdj1mMzUIJVJf3E55XkWQYvwj_AK-mKzC58tzbu5Z3U6VHoPh_MlpfyZQBtNAEp_TWMYBzHyni_oyY454" />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-on-primary">
+              <h3 class="text-3xl serif-bold mb-2">Mixology Bar</h3>
+              <p class="text-on-primary/80 font-body">Ricerca e creatività si fondono nei nostri cocktail signature.</p>
+            </div>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-6">
+          <a href="menu.html#cucina" class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container h-[400px] block">
+            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Loft10 food bites" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVfUVgQqDf3bsg4FgfbGYxKrqCENaRgNCScq3v39YhQVyVvy7C-wZZj3gVqctBnD7nCTWSamuPyFBwm6xE5M0P8M75ISFobFNczHll2yCqT9uBQx1lmmZPgPJ0oB2BbSzn8J_LEFV6Sm8cjk9tRNni7GKkNYJJEf5WL2nGbV_c-oLD1lIlTIkD_NLd1Hi7YXK_XwHGPPOn0rZz_82CzKMJgG5SoLMbC2zNUFloL13b792dsdUNxCfnWW-2FIF2vRGjM6VIz1sdeWI" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-on-primary">
+              <h3 class="text-3xl serif-bold mb-2">Gourmet Moments</h3>
+              <p class="text-on-primary/80 font-body">Piccole eccellenze gastronomiche per accompagnare il tuo drink.</p>
+            </div>
+          </a>
+          <div class="md:col-span-8 flex flex-col justify-center px-12 py-12 bg-surface-container-high rounded-xl">
+            <h3 class="text-4xl serif-bold mb-6">Un'atmosfera senza tempo</h3>
+            <p class="text-xl font-body text-on-surface/70 leading-relaxed mb-8">Ogni arredo, ogni luce vintage, ogni curva del Loft10 è stata scelta per creare un ambiente dove sentirsi a casa, circondati dal fascino del design industriale e della convivialità.</p>
+            <div class="flex gap-4">
+              <span class="px-6 py-2 bg-white rounded-full font-label font-bold text-xs uppercase tracking-widest text-primary shadow-sm">Industrial Style</span>
+              <span class="px-6 py-2 bg-white rounded-full font-label font-bold text-xs uppercase tracking-widest text-primary shadow-sm">Pavia City</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-24 px-6 mb-24">
+      <div class="container mx-auto max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-primary rounded-xl p-12 text-on-primary overflow-hidden relative">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+          <div class="space-y-4 relative z-10">
+            <h2 class="text-4xl serif-bold italic">Vivi il Loft10</h2>
+            <p class="font-body opacity-90 text-lg">Piazza Cavagneria, 10 — 27100 Pavia (PV). Uno spazio di 700m² aperto alla creatività e al buon vivere.</p>
+          </div>
+          <div class="grid grid-cols-1 gap-4 relative z-10">
+            <div class="bg-white/10 backdrop-blur-md rounded-full px-8 py-6 flex items-center justify-between">
+              <span class="font-label font-bold text-lg">Lun — Gio</span>
+              <span class="text-xl serif-bold">07:00 — 00:00</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md rounded-full px-8 py-6 flex items-center justify-between">
+              <span class="font-label font-bold text-lg">Ven — Sab</span>
+              <span class="text-xl serif-bold">07:00 — 02:00</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md rounded-full px-8 py-6 flex items-center justify-between">
+              <span class="font-label font-bold text-lg">Domenica</span>
+              <span class="text-xl serif-bold">07:00 — 23:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#fcf9f8] rounded-t-[3rem] mt-20 w-full px-12 py-16 border-t border-on-surface/5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-1">
+        <a href="index.html" class="no-underline">
+          <div class="font-['Newsreader'] text-2xl font-bold text-[#1c1b1b]">Loft10</div>
+        </a>
+        <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/40">Lounge Caffè Pavia</div>
+        <div class="flex gap-4 mt-3">
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://www.facebook.com/Loft10Bistrot/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">group</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex gap-6 text-sm">
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="chi-siamo.html">Chi Siamo</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="menu.html">Menu</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="gallery.html">Gallery</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="contatti.html">Contatti</a>
+        </div>
+        <div class="text-[#1c1b1b]/40 font-['Manrope'] text-sm tracking-wide text-center mt-2">
+          © 2025 Loft10. Tutti i diritti riservati.
+        </div>
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-1 text-sm text-[#1c1b1b]/40">
+        <span>Piazza Cavagneria, 10</span>
+        <span>27100 Pavia (PV)</span>
+        <a class="hover:text-[#af101a] transition-colors" href="tel:+390382538236">0382 538236</a>
+        <a class="hover:text-[#af101a] transition-colors" href="mailto:info.loft10@gmail.com">info.loft10@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

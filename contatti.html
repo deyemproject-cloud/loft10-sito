@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Contatti — Loft10 Lounge Caffè Pavia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error":"#ffffff","surface-container-highest":"#e5e2e1","on-background":"#1c1b1b",
+            "inverse-primary":"#ffb3ac","tertiary":"#005f7b","on-primary-container":"#fff2f0",
+            "surface-tint":"#ba1a20","outline-variant":"#e4beba","error-container":"#ffdad6",
+            "inverse-surface":"#313030","surface-container-high":"#eae7e7",
+            "on-secondary-container":"#636262","secondary-fixed":"#e5e2e1","error":"#ba1a1a",
+            "surface-bright":"#fcf9f8","tertiary-fixed":"#bee9ff","primary-fixed":"#ffdad6",
+            "on-secondary-fixed-variant":"#474746","on-tertiary":"#ffffff",
+            "on-tertiary-fixed-variant":"#004d65","on-tertiary-container":"#e9f7ff",
+            "surface-container-low":"#f6f3f2","on-secondary-fixed":"#1c1b1b",
+            "on-primary-fixed":"#410003","primary":"#af101a","secondary":"#5f5e5e",
+            "inverse-on-surface":"#f3f0ef","on-primary-fixed-variant":"#930010",
+            "on-primary":"#ffffff","primary-fixed-dim":"#ffb3ac","on-secondary":"#ffffff",
+            "on-surface":"#1c1b1b","on-surface-variant":"#5b403d","surface-dim":"#dcd9d9",
+            "secondary-fixed-dim":"#c8c6c5","outline":"#8f6f6c","tertiary-container":"#00799c",
+            "secondary-container":"#e2dfde","surface-container-lowest":"#ffffff",
+            "on-error-container":"#93000a","on-tertiary-fixed":"#001f2a","background":"#fcf9f8",
+            "surface-container":"#f0eded","tertiary-fixed-dim":"#7bd1f8","surface":"#fcf9f8",
+            "surface-variant":"#e5e2e1","primary-container":"#d32f2f"
+          },
+          fontFamily: { "headline": ["Newsreader"], "body": ["Manrope"], "label": ["Manrope"] },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { background-color: #fcf9f8; color: #1c1b1b; font-family: 'Manrope', sans-serif; }
+    .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+    .serif-bold { font-family: 'Newsreader', serif; font-weight: 700; }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+    <a href="index.html" class="flex flex-col leading-none no-underline">
+      <div class="font-['Newsreader'] font-bold text-2xl tracking-tighter text-[#1c1b1b]">Loft10</div>
+      <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Lounge Caffè</div>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all" href="index.html">Home</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all" href="chi-siamo.html">Chi Siamo</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all" href="menu.html">Menu</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all" href="gallery.html">Gallery</a>
+      <a class="text-[#af101a] font-semibold font-['Manrope'] font-medium text-sm uppercase tracking-widest" href="contatti.html">Contatti</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2">
+        <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+      </div>
+      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-transform no-underline">Prenota ora</a>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]"><span class="material-symbols-outlined text-2xl">menu</span></button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl flex-col items-center justify-center gap-8 pt-24">
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="absolute top-6 right-6 text-[#1c1b1b]"><span class="material-symbols-outlined text-3xl">close</span></button>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html">Home</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="chi-siamo.html">Chi Siamo</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="menu.html">Menu</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="gallery.html">Gallery</a>
+    <a class="text-[#af101a] font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold text-sm tracking-wide no-underline mt-4">Prenota ora</a>
+  </div>
+
+  <main class="pt-28 pb-16">
+    <div class="text-center px-6 mb-16">
+      <h1 class="text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Dove <span class="serif-italic text-primary">Trovarci</span></h1>
+      <p class="text-on-surface/60 font-body text-lg max-w-xl mx-auto">Nel cuore di Pavia, dietro il Duomo. Ti aspettiamo.</p>
+    </div>
+
+    <div class="container mx-auto px-6 max-w-5xl">
+
+      <!-- Contact Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <!-- Address -->
+        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-3xl">location_on</span>
+          </div>
+          <h3 class="serif-bold text-xl">Indirizzo</h3>
+          <p class="text-on-surface/60 font-body">Piazza Cavagneria, 10<br>27100 Pavia (PV)</p>
+          <a href="https://maps.google.com/?q=Piazza+Cavagneria+10+Pavia" target="_blank" rel="noopener" class="text-primary font-label font-bold text-sm uppercase tracking-widest hover:underline">Apri in Maps</a>
+        </div>
+        <!-- Phone -->
+        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-3xl">call</span>
+          </div>
+          <h3 class="serif-bold text-xl">Telefono</h3>
+          <p class="text-on-surface/60 font-body">
+            <a href="tel:+390382538236" class="hover:text-primary transition-colors">0382 538236</a><br>
+            <a href="tel:+393405750183" class="hover:text-primary transition-colors">340 575 0183</a>
+          </p>
+          <a href="https://wa.me/393405750183" target="_blank" rel="noopener" class="text-primary font-label font-bold text-sm uppercase tracking-widest hover:underline">Scrivici su WhatsApp</a>
+        </div>
+        <!-- Email -->
+        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-3xl">mail</span>
+          </div>
+          <h3 class="serif-bold text-xl">Email</h3>
+          <p class="text-on-surface/60 font-body">
+            <a href="mailto:info.loft10@gmail.com" class="hover:text-primary transition-colors">info.loft10@gmail.com</a>
+          </p>
+          <div class="flex gap-4 mt-2">
+            <a href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener" class="text-on-surface/40 hover:text-primary transition-colors"><span class="material-symbols-outlined">camera_alt</span></a>
+            <a href="https://www.facebook.com/Loft10Bistrot/" target="_blank" rel="noopener" class="text-on-surface/40 hover:text-primary transition-colors"><span class="material-symbols-outlined">group</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours -->
+      <div class="bg-primary rounded-xl p-10 md:p-12 text-on-primary mb-16 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -mr-24 -mt-24"></div>
+        <h2 class="text-3xl serif-bold italic mb-8 relative z-10">Orari di Apertura</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
+          <div class="bg-white/10 backdrop-blur-md rounded-xl px-8 py-6 text-center">
+            <div class="font-label font-bold text-sm uppercase tracking-widest opacity-70 mb-2">Lunedì — Giovedì</div>
+            <div class="text-2xl serif-bold">07:00 — 00:00</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-xl px-8 py-6 text-center">
+            <div class="font-label font-bold text-sm uppercase tracking-widest opacity-70 mb-2">Venerdì — Sabato</div>
+            <div class="text-2xl serif-bold">07:00 — 02:00</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-xl px-8 py-6 text-center">
+            <div class="font-label font-bold text-sm uppercase tracking-widest opacity-70 mb-2">Domenica</div>
+            <div class="text-2xl serif-bold">07:00 — 23:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map & Form -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Map -->
+        <div class="rounded-xl overflow-hidden h-[450px] bg-surface-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.8!2d9.1575!3d45.1847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787637e4f4f18a1%3A0x8e4e1b0f9b8e4e1b!2sPiazza%20Cavagneria%2C%2010%2C%2027100%20Pavia%20PV!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-surface-container-low rounded-xl p-8 md:p-10">
+          <h2 class="text-2xl serif-bold mb-6">Scrivici un messaggio</h2>
+          <form onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Messaggio inviato!'; this.querySelector('.submit-btn').disabled=true;" class="space-y-5">
+            <div>
+              <label class="block font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 mb-2">Nome</label>
+              <input type="text" required class="w-full px-5 py-3 rounded-xl border border-on-surface/10 bg-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body" placeholder="Il tuo nome">
+            </div>
+            <div>
+              <label class="block font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 mb-2">Email</label>
+              <input type="email" required class="w-full px-5 py-3 rounded-xl border border-on-surface/10 bg-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body" placeholder="La tua email">
+            </div>
+            <div>
+              <label class="block font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 mb-2">Telefono</label>
+              <input type="tel" class="w-full px-5 py-3 rounded-xl border border-on-surface/10 bg-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body" placeholder="Il tuo numero (opzionale)">
+            </div>
+            <div>
+              <label class="block font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 mb-2">Messaggio</label>
+              <textarea required rows="4" class="w-full px-5 py-3 rounded-xl border border-on-surface/10 bg-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body resize-none" placeholder="Come possiamo aiutarti?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn w-full bg-primary text-on-primary py-4 rounded-full font-label font-bold text-sm tracking-widest uppercase hover:scale-[1.02] active:scale-[0.98] transition-all">
+              Invia Messaggio
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#fcf9f8] rounded-t-[3rem] mt-20 w-full px-12 py-16 border-t border-on-surface/5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-1">
+        <a href="index.html" class="no-underline"><div class="font-['Newsreader'] text-2xl font-bold text-[#1c1b1b]">Loft10</div></a>
+        <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/40">Lounge Caffè Pavia</div>
+        <div class="flex gap-4 mt-3">
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://www.facebook.com/Loft10Bistrot/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">group</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex gap-6 text-sm">
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="chi-siamo.html">Chi Siamo</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="menu.html">Menu</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="gallery.html">Gallery</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="contatti.html">Contatti</a>
+        </div>
+        <div class="text-[#1c1b1b]/40 font-['Manrope'] text-sm tracking-wide text-center mt-2">© 2025 Loft10. Tutti i diritti riservati.</div>
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-1 text-sm text-[#1c1b1b]/40">
+        <span>Piazza Cavagneria, 10</span><span>27100 Pavia (PV)</span>
+        <a class="hover:text-[#af101a] transition-colors" href="tel:+390382538236">0382 538236</a>
+        <a class="hover:text-[#af101a] transition-colors" href="mailto:info.loft10@gmail.com">info.loft10@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

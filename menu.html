@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Menu — Loft10 Lounge Caffè Pavia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error": "#ffffff", "surface-container-highest": "#e5e2e1", "on-background": "#1c1b1b",
+            "inverse-primary": "#ffb3ac", "tertiary": "#005f7b", "on-primary-container": "#fff2f0",
+            "surface-tint": "#ba1a20", "outline-variant": "#e4beba", "error-container": "#ffdad6",
+            "inverse-surface": "#313030", "surface-container-high": "#eae7e7",
+            "on-secondary-container": "#636262", "secondary-fixed": "#e5e2e1", "error": "#ba1a1a",
+            "surface-bright": "#fcf9f8", "tertiary-fixed": "#bee9ff", "primary-fixed": "#ffdad6",
+            "on-secondary-fixed-variant": "#474746", "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#004d65", "on-tertiary-container": "#e9f7ff",
+            "surface-container-low": "#f6f3f2", "on-secondary-fixed": "#1c1b1b",
+            "on-primary-fixed": "#410003", "primary": "#af101a", "secondary": "#5f5e5e",
+            "inverse-on-surface": "#f3f0ef", "on-primary-fixed-variant": "#930010",
+            "on-primary": "#ffffff", "primary-fixed-dim": "#ffb3ac", "on-secondary": "#ffffff",
+            "on-surface": "#1c1b1b", "on-surface-variant": "#5b403d", "surface-dim": "#dcd9d9",
+            "secondary-fixed-dim": "#c8c6c5", "outline": "#8f6f6c", "tertiary-container": "#00799c",
+            "secondary-container": "#e2dfde", "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a", "on-tertiary-fixed": "#001f2a", "background": "#fcf9f8",
+            "surface-container": "#f0eded", "tertiary-fixed-dim": "#7bd1f8", "surface": "#fcf9f8",
+            "surface-variant": "#e5e2e1", "primary-container": "#d32f2f"
+          },
+          fontFamily: { "headline": ["Newsreader"], "body": ["Manrope"], "label": ["Manrope"] },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { background-color: #fcf9f8; color: #1c1b1b; font-family: 'Manrope', sans-serif; }
+    .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+    .serif-bold { font-family: 'Newsreader', serif; font-weight: 700; }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-btn.active { color: #af101a; border-bottom-color: #af101a; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+    <a href="index.html" class="flex flex-col leading-none no-underline">
+      <div class="font-['Newsreader'] font-bold text-2xl tracking-tighter text-[#1c1b1b]">Loft10</div>
+      <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Lounge Caffè</div>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="index.html">Home</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="chi-siamo.html">Chi Siamo</a>
+      <a class="text-[#af101a] font-semibold font-['Manrope'] font-medium text-sm uppercase tracking-widest transition-all duration-300 ease-in-out" href="menu.html">Menu</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="gallery.html">Gallery</a>
+      <a class="text-[#1c1b1b]/60 font-['Manrope'] font-medium text-sm uppercase tracking-widest hover:text-[#af101a] transition-all duration-300 ease-in-out" href="contatti.html">Contatti</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2">
+        <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+      </div>
+      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-transform no-underline">Prenota ora</a>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl flex-col items-center justify-center gap-8 pt-24">
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="absolute top-6 right-6 text-[#1c1b1b]"><span class="material-symbols-outlined text-3xl">close</span></button>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="index.html">Home</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="chi-siamo.html">Chi Siamo</a>
+    <a class="text-[#af101a] font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="menu.html">Menu</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="gallery.html">Gallery</a>
+    <a class="text-[#1c1b1b]/60 font-['Manrope'] font-bold text-lg uppercase tracking-widest" href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold text-sm tracking-wide no-underline mt-4">Prenota ora</a>
+  </div>
+
+  <main class="pt-28 pb-16">
+    <!-- Header -->
+    <div class="text-center px-6 mb-8">
+      <h1 class="text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Il Nostro <span class="serif-italic text-primary">Menu</span></h1>
+      <p class="text-on-surface/60 font-body text-lg max-w-xl mx-auto">Dalla colazione alla tarda sera, ogni momento ha il suo sapore al Loft10.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="sticky top-[72px] z-40 bg-surface/80 backdrop-blur-xl border-b border-on-surface/5">
+      <div class="container mx-auto px-6 flex overflow-x-auto gap-0 no-scrollbar">
+        <button onclick="switchTab('caffetteria')" class="tab-btn active flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#af101a] transition-all whitespace-nowrap" data-tab="caffetteria">
+          <span class="material-symbols-outlined text-base align-middle mr-1">coffee</span> Caffetteria
+        </button>
+        <button onclick="switchTab('cucina')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#af101a] transition-all whitespace-nowrap" data-tab="cucina">
+          <span class="material-symbols-outlined text-base align-middle mr-1">restaurant</span> Cucina
+        </button>
+        <button onclick="switchTab('cocktails')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#af101a] transition-all whitespace-nowrap" data-tab="cocktails">
+          <span class="material-symbols-outlined text-base align-middle mr-1">local_bar</span> Cocktails & Birre
+        </button>
+        <button onclick="switchTab('vini')" class="tab-btn flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#af101a] transition-all whitespace-nowrap" data-tab="vini">
+          <span class="material-symbols-outlined text-base align-middle mr-1">wine_bar</span> Carta Vini
+        </button>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-6 mt-12 max-w-4xl">
+
+      <!-- ==================== CAFFETTERIA ==================== -->
+      <div id="caffetteria" class="tab-content active">
+
+        <!-- Caffè -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Caffè</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè</span><span class="font-label font-bold text-primary">€1.30</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè Doppio</span><span class="font-label font-bold text-primary">€2.60</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè Corretto</span><span class="font-label font-bold text-primary">€2.30</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Decaffeinato</span><span class="font-label font-bold text-primary">€1.40</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè Americano</span><span class="font-label font-bold text-primary">€1.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Caffè d'Orzo o Ginseng</span><span class="text-on-surface/50 text-sm ml-2">piccolo</span></div><span class="font-label font-bold text-primary">€1.60</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Caffè d'Orzo o Ginseng</span><span class="text-on-surface/50 text-sm ml-2">grande</span></div><span class="font-label font-bold text-primary">€3.00</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè Shakerato</span><span class="font-label font-bold text-primary">€4.00</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè Shakerato con Baileys</span><span class="font-label font-bold text-primary">€5.00</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Marocchino</span><span class="font-label font-bold text-primary">€1.80</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Macchiatone</span><span class="font-label font-bold text-primary">€1.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Cappuccino</span><span class="font-label font-bold text-primary">€1.90</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Cappuccino</span><span class="text-on-surface/50 text-sm ml-2">soia / riso / senza lattosio</span></div><span class="font-label font-bold text-primary">€2.00</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Latte</span><span class="font-label font-bold text-primary">€1.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Latte Macchiato</span><span class="font-label font-bold text-primary">€2.50</span></div>
+          </div>
+        </div>
+
+        <!-- Cioccolata Calda -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">La Cioccolata</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Classica</h3><span class="font-label font-bold text-primary">€4.00</span></div>
+              <p class="text-on-surface/60 text-sm">Cioccolata densa: bianca, al latte, fondente, arancia o cannella. <span class="text-on-surface/40">(+panna €0.50)</span></p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Marshmallow</h3><span class="font-label font-bold text-primary">€4.80</span></div>
+              <p class="text-on-surface/60 text-sm">Cioccolata cremosa al latte con marshmallow.</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Cookies</h3><span class="font-label font-bold text-primary">€4.80</span></div>
+              <p class="text-on-surface/60 text-sm">Cioccolata fondente con crumble di biscotto al burro e gocce di cioccolato.</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Red Velvet</h3><span class="font-label font-bold text-primary">€5.00</span></div>
+              <p class="text-on-surface/60 text-sm">Cioccolata bianca con topping ai frutti rossi e panna.</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Nocciola</h3><span class="font-label font-bold text-primary">€4.80</span></div>
+              <p class="text-on-surface/60 text-sm">Cioccolata fondente con crema di nocciole, granella tostata e panna.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tè & Tisane -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Tè, Tisane & Infusi</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Green Tea & Moroccan Mint</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Tè verde e menta marocchina.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 3 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Green Tea Ginger & Lemon</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Sencha con note di agrumi, cannella e carota.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 2–3 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Black Tea English Breakfast</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Il blend più famoso al mondo, forte e deciso, ideale per la mattina.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 2–4 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Black Chai Tea</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Tè nero, zenzero, pepe, cardamomo, chiodi di garofano e anice stellato.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 3–5 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Earl Grey</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Gusto pieno, fruttato e aromatico, famoso in tutto il mondo.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 3–5 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Rooibos</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Rooibos puro sudafricano, senza caffeina, delicato e piacevole.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 6–8 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Infuso ai Frutti di Bosco</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Mela, sambuco, barbabietola, ibisco, mora, ribes nero, lampone, fragola.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 6–8 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Infuso Agrumi Misti</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Mela, ibisco, rosa canina, scorze di agrumi, petali di cartamo.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 6–8 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Infuso Ciliegia & Mirtillo</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Ibisco, uva, sambuco, ribes nero, mirtillo, ciliegia.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 6–8 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Tisana Detox</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Tè verde, finocchio, anice, betulla, citronella, melissa, ortica, liquirizia.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 3–5 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Green Tea Arancia & Spezie</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Sencha pregiato con arancia fresca e un tocco di zenzero.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 2–3 min</span>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+              <div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Camomilla</h3><span class="font-label font-bold text-primary">€3.70</span></div>
+              <p class="text-on-surface/60 text-sm">Fiori di camomilla, rilassante, consigliata per la sera.</p>
+              <span class="text-xs text-on-surface/30 mt-1 inline-block">Infusione: 6–8 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== CUCINA ==================== -->
+      <div id="cucina" class="tab-content">
+
+        <!-- Primi -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Primi</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Risotto Carnaroli della tradizione</span><br><span class="text-on-surface/50 text-sm">salsiccia e bonarda</span></div><span class="font-label font-bold text-primary">€11</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Risotto Carnaroli pollo e curry</span><span class="font-label font-bold text-primary">€11</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Risotto Carnaroli gamberi e lime</span><span class="font-label font-bold text-primary">€14</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Risotto Carnaroli con taleggio</span><br><span class="text-on-surface/50 text-sm">bacon croccante e gherigli di noci</span></div><span class="font-label font-bold text-primary">€11</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Risotto Carnaroli con taleggio e pere</span><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Risotto Carnaroli zola e noci</span><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Risotto Carnaroli vegetariano</span><span class="font-label font-bold text-primary">€9</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Risotto Carnaroli con dadolata di zucca</span><br><span class="text-on-surface/50 text-sm">salsiccia e fonduta di grana</span></div><span class="font-label font-bold text-primary">€11</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Risotto Carnaroli con crema di zucca e gamberi</span><span class="font-label font-bold text-primary">€14</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Fusilli integrali con pomodorini</span><br><span class="text-on-surface/50 text-sm">pesto di basilico, mandorle e ricotta salata</span></div><span class="font-label font-bold text-primary">€9</span></div>
+          </div>
+        </div>
+
+        <!-- Secondi -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Secondi</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tagliere di salumi con gnocco fritto</span></div><span class="text-on-surface/40 text-xs">allergeni: 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Millefoglie di verdure al forno</span><br><span class="text-on-surface/50 text-sm">melanzane, zucchine, pomodoro, bufala e basilico</span></div><span class="text-on-surface/40 text-xs">allergeni: 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Polpette di ricotta e spinaci</span><br><span class="text-on-surface/50 text-sm">su crema di pomodoro</span></div><span class="text-on-surface/40 text-xs">allergeni: 3, 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Avocado Toast</span><br><span class="text-on-surface/50 text-sm">pane rustico, avocado, salmone affumicato e fiocchi di latte</span></div><span class="text-on-surface/40 text-xs">allergeni: 7, 8</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Cotoletta di pollo dorata con patate</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 3</span></div>
+          </div>
+        </div>
+
+        <!-- Insalate -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Insalate</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Ceci Greca</h3><span class="font-label font-bold text-primary">€11</span></div></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Ohana</h3><span class="font-label font-bold text-primary">€11</span></div></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Caesar</h3><span class="font-label font-bold text-primary">€14</span></div></div>
+            <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">L'Uovo</h3><span class="font-label font-bold text-primary">€11</span></div></div>
+          </div>
+        </div>
+
+        <!-- Panini -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Panini & Rotoli</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Salmone</span><br><span class="text-on-surface/50 text-sm">Philadelphia, insalata, zucchine grigliate</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Vegetariano</span><br><span class="text-on-surface/50 text-sm">melanzane e zucchine grigliate, pomodori secchi, pesto di pistacchio</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 5</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Cotto</span><br><span class="text-on-surface/50 text-sm">Brie, insalata, pomodoro</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Mortadella</span><br><span class="text-on-surface/50 text-sm">insalata, crema di pistacchio, bufala</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 5, 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Crudo di Parma</span><br><span class="text-on-surface/50 text-sm">bufala, pomodoro, insalata</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 7</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Milanese</span><br><span class="text-on-surface/50 text-sm">cotoletta di pollo, insalata, pomodoro, maionese</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 3, 7</span></div>
+          </div>
+        </div>
+
+        <!-- Hamburger -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Hamburger</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Classici</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Salmone</span><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Vegetariano</span><span class="font-label font-bold text-primary">€8</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Cotto</span><span class="font-label font-bold text-primary">€9</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Bologna</span><span class="font-label font-bold text-primary">€9</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Parma</span><span class="font-label font-bold text-primary">€9</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Milanese</span><span class="font-label font-bold text-primary">€9</span></div>
+          </div>
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Gourmet</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Crispy</span><span class="font-label font-bold text-primary">€12</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">L.A.</span><span class="font-label font-bold text-primary">€12</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Garibaldi</span><span class="font-label font-bold text-primary">€12</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Veggie</span><span class="font-label font-bold text-primary">€12</span></div>
+          </div>
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Speciali</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">The Original Norwegian</span><span class="font-label font-bold text-primary">€11</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><span class="serif-bold text-lg">Veggie Special</span><span class="font-label font-bold text-primary">€13</span></div>
+          </div>
+        </div>
+
+        <!-- Club Sandwich -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Club Sandwich</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4">
+            <div><span class="serif-bold text-lg">Club Sandwich</span><br><span class="text-on-surface/50 text-sm">con pane ai cereali</span></div>
+            <span class="font-label font-bold text-primary">€12</span>
+          </div>
+        </div>
+
+        <!-- Brunch -->
+        <div class="mb-16">
+          <div class="bg-primary/5 rounded-xl p-8 mb-8">
+            <h2 class="text-3xl serif-bold mb-2">Brunch</h2>
+            <p class="text-on-surface/60 font-label font-bold text-sm uppercase tracking-widest">Servito dalle 9:00 alle 14:30</p>
+          </div>
+
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Pancake & Waffle</h3>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Nutella</span><br><span class="text-on-surface/50 text-sm">granella di frutta secca, lamponi e more</span></div><span class="font-label font-bold text-primary">€8.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Nutella</span><br><span class="text-on-surface/50 text-sm">banane e cocco essiccato</span></div><span class="font-label font-bold text-primary">€7.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Yogurt greco</span><br><span class="text-on-surface/50 text-sm">miele e granola</span></div><span class="font-label font-bold text-primary">€7.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Yogurt greco</span><br><span class="text-on-surface/50 text-sm">mirtilli e sciroppo d'acero</span></div><span class="font-label font-bold text-primary">€8.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Yogurt greco</span><br><span class="text-on-surface/50 text-sm">frutti di bosco, noci, mandorle e miele</span></div><span class="font-label font-bold text-primary">€12</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Yogurt greco</span><br><span class="text-on-surface/50 text-sm">granola e frutta fresca</span></div><span class="font-label font-bold text-primary">€8.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Yogurt greco</span><br><span class="text-on-surface/50 text-sm">banana, caramello e arachidi salate</span></div><span class="font-label font-bold text-primary">€12</span></div>
+          </div>
+
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Eggs</h3>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Uova all'occhio</span><br><span class="text-on-surface/50 text-sm">funghi grigliati, bacon croccante, salsiccia, pane tostato</span></div><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Uova strapazzate</span><br><span class="text-on-surface/50 text-sm">bacon croccante, rucola, pomodorini, pane tostato</span></div><span class="font-label font-bold text-primary">€10</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Uova in camicia</span><br><span class="text-on-surface/50 text-sm">avocado schiacciato, salmone affumicato, pane integrale</span></div><span class="font-label font-bold text-primary">€12</span></div>
+          </div>
+
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Toast</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">AVO Toast</span><br><span class="text-on-surface/50 text-sm">pane ai cereali, avocado schiacciato, pomodorini secchi, hummus di ceci</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Salmon Toast</span><br><span class="text-on-surface/50 text-sm">pane ai cereali, salmone affumicato, rucola, avocado</span></div><span class="font-label font-bold text-primary">€9.50</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Toast Classico</span><br><span class="text-on-surface/50 text-sm">prosciutto cotto e fontina</span></div><span class="font-label font-bold text-primary">€12</span></div>
+          </div>
+        </div>
+
+        <!-- Allergeni -->
+        <div class="bg-surface-container-high rounded-xl p-8">
+          <h3 class="serif-bold text-lg mb-4">Allergeni</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm text-on-surface/60">
+            <span>1. Glutine</span><span>2. Crostacei</span><span>3. Uova</span><span>4. Pesce</span>
+            <span>5. Arachidi</span><span>6. Soia</span><span>7. Latte</span><span>8. Frutta a guscio</span>
+            <span>9. Sedano</span><span>10. Senape</span><span>11. Sesamo</span><span>12. Solfiti</span>
+            <span>13. Lupini</span><span>14. Molluschi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== COCKTAILS & BIRRE ==================== -->
+      <div id="cocktails" class="tab-content">
+
+        <!-- Cocktails Classici -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Cocktails</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Americano</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Carpano rosso, Bitter rosso, seltz</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Negroni</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Carpano rosso, Bitter, Gin</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Sbagliato</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Carpano rosso, Bitter, Prosecco</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Caipiroska</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Vodka, lime, zucchero</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Caipirinha</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Cachaça, lime, zucchero</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Daiquiri</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Rum chiaro, lime, sciroppo di zucchero</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Tequila Sunrise</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Tequila, succo d'arancia, granatina</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Bloody Mary</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Vodka, succo di pomodoro, limone, tabasco, Worcester</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Old Fashioned</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Bourbon, zolletta di zucchero, angostura, seltz</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Moscow Mule</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Vodka, lime, ginger beer</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Sex on the Beach</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Vodka, peach tree, succo d'arancia, mirtillo</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Margarita</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Tequila, Triple sec, limone</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Mojito</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Rum chiaro, lime, zucchero di canna, menta, seltz</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Exotic Tea</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Passoa, triple sec, succo pesca, limone, melograno, passion fruit</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Long Island Iced Tea</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Vodka, rum, tequila, gin, triple sec, zucchero, limone</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Piña Colada</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Rum, ananas, cocco</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Spritz</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Aperol, Spumante e seltz</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Hugo Spritz</h3><span class="font-label font-bold text-primary">€9</span></div><p class="text-on-surface/50 text-sm">Spumante, St-Germain, seltz</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Porno Star Martini</h3><span class="font-label font-bold text-primary">€9</span></div><p class="text-on-surface/50 text-sm">Vodka, Passoa, passion fruit, limone, albume + shot di prosecco</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Good Father</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Scotch Whisky, Amaretto</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Paloma</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Tequila, tonica al pompelmo, lime e pizzico di sale</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Clover Club</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Gin, sciroppo di lampone, lime e albume</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Pink Gin Fizz</h3><span class="font-label font-bold text-primary">€9</span></div><p class="text-on-surface/50 text-sm">Malfy al Pompelmo rosa, sweet & sour, albume e soda</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Blue Ocean</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Malibu, Blue Curaçao, lime e sprite</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">French 75</h3><span class="font-label font-bold text-primary">€10</span></div><p class="text-on-surface/50 text-sm">Gin, sweet & sour, champagne</p></div>
+          </div>
+        </div>
+
+        <!-- Mocktails -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Mocktails <span class="text-on-surface/40 text-lg serif-italic">analcolici</span></h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Loft 10</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Limone, succo arancia, zenzero, curcuma, pepe di cayenna</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Florida</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Succo arancia, succo pompelmo, limone, granatina</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Aloe Cherry</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Lime, succo di ciliegia, succo aloe, marmellata ciliegia</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Fritz Cetriolo e Sambuco</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Lime, sciroppo sambuco, cetriolo, acqua tonica</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Melograno Mix</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Limone, zucchero, passion fruit, succo d'arancia, melograno</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Skywasser</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Zucchero, limone, sciroppo lampone, seltz</p></div>
+            <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Pem-Pem</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Maracuja, purea di fragola, sciroppo di sambuco e succo d'ananas</p></div>
+          </div>
+        </div>
+
+        <!-- Gin & Tonic -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Gin & Tonic</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead><tr class="border-b-2 border-on-surface/10">
+                <th class="py-3 font-label font-bold text-sm uppercase tracking-widest text-on-surface/40">Gin</th>
+                <th class="py-3 font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 text-center">Origine</th>
+                <th class="py-3 font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 text-center">Vol.</th>
+                <th class="py-3 font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 text-center">Stile</th>
+                <th class="py-3 font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 text-right">Prezzo</th>
+              </tr></thead>
+              <tbody class="divide-y divide-on-surface/5">
+                <tr><td class="py-3 serif-bold">Primo</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">43%</td><td class="text-center text-on-surface/50 text-sm">Aromatico</td><td class="text-right font-label font-bold text-primary">€14</td></tr>
+                <tr><td class="py-3 serif-bold">Hendrick's</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">44%</td><td class="text-center text-on-surface/50 text-sm">Secco</td><td class="text-right font-label font-bold text-primary">€10</td></tr>
+                <tr><td class="py-3 serif-bold">Mare Mediterranean</td><td class="text-center text-on-surface/50 text-sm">ES</td><td class="text-center text-on-surface/50 text-sm">42.7%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€10</td></tr>
+                <tr><td class="py-3 serif-bold">Z 44</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">44%</td><td class="text-center text-on-surface/50 text-sm">Erbaceo</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Tanqueray</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">43%</td><td class="text-center text-on-surface/50 text-sm">Secco</td><td class="text-right font-label font-bold text-primary">€8</td></tr>
+                <tr><td class="py-3 serif-bold">Etsu</td><td class="text-center text-on-surface/50 text-sm">JP</td><td class="text-center text-on-surface/50 text-sm">43%</td><td class="text-center text-on-surface/50 text-sm">Floreale</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Bombay</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">40%</td><td class="text-center text-on-surface/50 text-sm">Secco</td><td class="text-right font-label font-bold text-primary">€8</td></tr>
+                <tr><td class="py-3 serif-bold">Del Professore Monsieur</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">43.7%</td><td class="text-center text-on-surface/50 text-sm">Floreale</td><td class="text-right font-label font-bold text-primary">€15</td></tr>
+                <tr><td class="py-3 serif-bold">Fifty Pounds</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">43.5%</td><td class="text-center text-on-surface/50 text-sm">Secco</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Opihr</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">42.5%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€10</td></tr>
+                <tr><td class="py-3 serif-bold">Malfy Original</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">41%</td><td class="text-center text-on-surface/50 text-sm">Secco</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Brockmans</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">40%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Malfy Pompelmo / Arancia / Limone</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">41%</td><td class="text-center text-on-surface/50 text-sm">Agrumi</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Beefeater</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">40%</td><td class="text-center text-on-surface/50 text-sm">Secco</td><td class="text-right font-label font-bold text-primary">€8</td></tr>
+                <tr><td class="py-3 serif-bold">Roku</td><td class="text-center text-on-surface/50 text-sm">JP</td><td class="text-center text-on-surface/50 text-sm">43%</td><td class="text-center text-on-surface/50 text-sm">Floreale</td><td class="text-right font-label font-bold text-primary">€15</td></tr>
+                <tr><td class="py-3 serif-bold">Monkey 47</td><td class="text-center text-on-surface/50 text-sm">DE</td><td class="text-center text-on-surface/50 text-sm">47%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€15</td></tr>
+                <tr><td class="py-3 serif-bold">Generous</td><td class="text-center text-on-surface/50 text-sm">FR</td><td class="text-center text-on-surface/50 text-sm">44%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€14</td></tr>
+                <tr><td class="py-3 serif-bold">Portofino</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">43%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€15</td></tr>
+                <tr><td class="py-3 serif-bold">Del Molo</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">40%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€14</td></tr>
+                <tr><td class="py-3 serif-bold">Sabatini</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">41.3%</td><td class="text-center text-on-surface/50 text-sm">Aromatico</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">London N°31</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">47%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Pigskin</td><td class="text-center text-on-surface/50 text-sm">IT</td><td class="text-center text-on-surface/50 text-sm">40%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€10</td></tr>
+                <tr><td class="py-3 serif-bold">Dry Bobby's Schiedam</td><td class="text-center text-on-surface/50 text-sm">NL</td><td class="text-center text-on-surface/50 text-sm">42%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€15</td></tr>
+                <tr><td class="py-3 serif-bold">Portobello Road</td><td class="text-center text-on-surface/50 text-sm">UK</td><td class="text-center text-on-surface/50 text-sm">42%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+                <tr><td class="py-3 serif-bold">Akori</td><td class="text-center text-on-surface/50 text-sm">JP</td><td class="text-center text-on-surface/50 text-sm">42%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€14</td></tr>
+                <tr><td class="py-3 serif-bold">Amuerte</td><td class="text-center text-on-surface/50 text-sm">BE</td><td class="text-center text-on-surface/50 text-sm">43%</td><td class="text-center text-on-surface/50 text-sm">Botanico</td><td class="text-right font-label font-bold text-primary">€12</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Birre -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Birre</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Alla Spina</h3>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Martino's Pale Ale</span><span class="text-on-surface/40 text-sm ml-2">5.8%</span></div><span class="font-label font-bold text-primary">€3.50 / €5</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">IPA Green Killer</span><span class="text-on-surface/40 text-sm ml-2">6.5%</span></div><span class="font-label font-bold text-primary">€3.50 / €5</span></div>
+            <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Pils Schmucker</span><span class="text-on-surface/40 text-sm ml-2">4.9%</span></div><span class="font-label font-bold text-primary">€3.50 / €5</span></div>
+          </div>
+
+          <h3 class="serif-italic text-xl text-on-surface/60 mb-4">In Bottiglia</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Beck's</span><span class="text-on-surface/40 text-sm ml-2">5% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Ceres</span><span class="text-on-surface/40 text-sm ml-2">7.7% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Heineken</span><span class="text-on-surface/40 text-sm ml-2">5% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Menabrea</span><span class="text-on-surface/40 text-sm ml-2">4.8% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Tennent's</span><span class="text-on-surface/40 text-sm ml-2">9% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Ichnusa</span><span class="text-on-surface/40 text-sm ml-2">4.7% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Ichnusa non filtrata</span><span class="text-on-surface/40 text-sm ml-2">5% · 33cl</span></div><span class="font-label font-bold text-primary">€5</span></div>
+            <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4"><div><span class="serif-bold text-lg">Kapuziner</span><span class="text-on-surface/40 text-sm ml-2">5.4% · 50cl</span></div><span class="font-label font-bold text-primary">€7</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== CARTA VINI ==================== -->
+      <div id="vini" class="tab-content">
+
+        <!-- Bollicine -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Bollicine d'Italia</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Nature</h3><div class="text-right"><span class="font-label font-bold text-primary">€37</span><span class="text-on-surface/40 text-sm ml-2">calice €8</span></div></div><p class="text-on-surface/50 text-sm">Pinot Nero, Chardonnay · <span class="serif-italic">Monsupello</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Brut Cruasè Rosé</h3><div class="text-right"><span class="font-label font-bold text-primary">€35</span><span class="text-on-surface/40 text-sm ml-2">calice €7</span></div></div><p class="text-on-surface/50 text-sm">Pinot Nero · <span class="serif-italic">Torre degli Alberi</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Grand Cuvée</h3><div class="text-right"><span class="font-label font-bold text-primary">€33</span><span class="text-on-surface/40 text-sm ml-2">calice €7</span></div></div><p class="text-on-surface/50 text-sm">Pinot Nero · <span class="serif-italic">Travaglino</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Prosecco Valdobbiadene</h3><div class="text-right"><span class="font-label font-bold text-primary">€25</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Glera · <span class="serif-italic">Bortolomiol</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Cartizze Valdobbiadene</h3><div class="text-right"><span class="font-label font-bold text-primary">€34</span><span class="text-on-surface/40 text-sm ml-2">calice €7</span></div></div><p class="text-on-surface/50 text-sm">Glera · <span class="serif-italic">Vallis Mareni</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Trento Doc Brut</h3><div class="text-right"><span class="font-label font-bold text-primary">€30</span><span class="text-on-surface/40 text-sm ml-2">calice €7</span></div></div><p class="text-on-surface/50 text-sm">Pinot Nero, Chardonnay · <span class="serif-italic">Monfort</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Contadi Brut</h3><div class="text-right"><span class="font-label font-bold text-primary">€38</span><span class="text-on-surface/40 text-sm ml-2">calice €8</span></div></div><p class="text-on-surface/50 text-sm">Chardonnay, Pinot Nero, Pinot Bianco · <span class="serif-italic">Contadi Castaldi</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">La Valle Brut</h3><div class="text-right"><span class="font-label font-bold text-primary">€38</span><span class="text-on-surface/40 text-sm ml-2">calice €8</span></div></div><p class="text-on-surface/50 text-sm">Chardonnay, Pinot Nero, Pinot Bianco · <span class="serif-italic">La Valle</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Cuvée Prestige</h3><div class="text-right"><span class="font-label font-bold text-primary">€45</span><span class="text-on-surface/40 text-sm ml-2">calice €9</span></div></div><p class="text-on-surface/50 text-sm">Chardonnay, Pinot Nero, Pinot Bianco · <span class="serif-italic">Ca' Del Bosco</span></p></div>
+          </div>
+        </div>
+
+        <!-- Bianchi -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Bianchi d'Italia</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Riesling Renano</h3><div class="text-right"><span class="font-label font-bold text-primary">€21</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Riesling Renano · <span class="serif-italic">Monsupello</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Sauvignon</h3><div class="text-right"><span class="font-label font-bold text-primary">€21</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Sauvignon · <span class="serif-italic">Monsupello</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Pinot Grigio</h3><div class="text-right"><span class="font-label font-bold text-primary">€21</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Pinot Grigio · <span class="serif-italic">Monsupello</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Chardonnay</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Chardonnay · <span class="serif-italic">La Frassina</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Gewürztraminer</h3><div class="text-right"><span class="font-label font-bold text-primary">€22</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Gewürztraminer · <span class="serif-italic">Kössler</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Collio</h3><div class="text-right"><span class="font-label font-bold text-primary">€20</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Ribolla Gialla · <span class="serif-italic">Ronco Scagnêtt</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Corolla</h3><div class="text-right"><span class="font-label font-bold text-primary">€20</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Passerina · <span class="serif-italic">Poderi San Lazzaro</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">La Sibilla</h3><div class="text-right"><span class="font-label font-bold text-primary">€20</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Falanghina · <span class="serif-italic">Campi Flegrei</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Orriu Ve'r</h3><div class="text-right"><span class="font-label font-bold text-primary">€20</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Vermentino · <span class="serif-italic">Quartomoro</span></p></div>
+          </div>
+        </div>
+
+        <!-- Rossi -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Rossi d'Italia</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Bonarda Calcababio</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Croatina · <span class="serif-italic">Monsupello</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Bonarda Ipazia Vivace</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Croatina · <span class="serif-italic">Picchioni</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Roccagrande</h3><div class="text-right"><span class="font-label font-bold text-primary">€19</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Barbera · <span class="serif-italic">La Roccagrande</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Buttafuoco Ostinato</h3><div class="text-right"><span class="font-label font-bold text-primary">€21</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Croatina, Barbera · <span class="serif-italic">Massimo Piovani</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Il Virba</h3><div class="text-right"><span class="font-label font-bold text-primary">€22</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Nebbiolo · <span class="serif-italic">Virna</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Valpolicella Ripasso "Il Vegro"</h3><div class="text-right"><span class="font-label font-bold text-primary">€30</span><span class="text-on-surface/40 text-sm ml-2">calice €7</span></div></div><p class="text-on-surface/50 text-sm">Corvina, Corvinone, Rondinella · <span class="serif-italic">Brigaldara</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Merlot</h3><div class="text-right"><span class="font-label font-bold text-primary">€22</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Merlot · <span class="serif-italic">Bolzicco</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Rosso di Montepulciano</h3><div class="text-right"><span class="font-label font-bold text-primary">€30</span><span class="text-on-surface/40 text-sm ml-2">calice €7</span></div></div><p class="text-on-surface/50 text-sm">Sangiovese, Cannaiolo, Mammolo · <span class="serif-italic">Il Conventino</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Ronna Syrah</h3><div class="text-right"><span class="font-label font-bold text-primary">€23</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Syrah · <span class="serif-italic">Terre di Giurfo</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Chianti Classico</h3><div class="text-right"><span class="font-label font-bold text-primary">€24</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Sangiovese, Cannaiolo · <span class="serif-italic">Rodano</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Primitivo di Manduria</h3><div class="text-right"><span class="font-label font-bold text-primary">€23</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Primitivo · <span class="serif-italic">Feudi Salentini</span></p></div>
+          </div>
+        </div>
+
+        <!-- Vini da Dessert -->
+        <div class="mb-16">
+          <h2 class="text-3xl serif-bold mb-2">Vini da Dessert</h2>
+          <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+          <div class="space-y-5">
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Felling</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Moscato · <span class="serif-italic">Monsupello</span></p></div>
+            <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Sangue di Giuda</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Barbera, Croatina, Uva Rara · <span class="serif-italic">Bagnasco Paolo</span></p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#fcf9f8] rounded-t-[3rem] mt-20 w-full px-12 py-16 border-t border-on-surface/5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-1">
+        <a href="index.html" class="no-underline"><div class="font-['Newsreader'] text-2xl font-bold text-[#1c1b1b]">Loft10</div></a>
+        <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/40">Lounge Caffè Pavia</div>
+        <div class="flex gap-4 mt-3">
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://www.facebook.com/Loft10Bistrot/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">group</span></a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex gap-6 text-sm">
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="chi-siamo.html">Chi Siamo</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="menu.html">Menu</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="gallery.html">Gallery</a>
+          <a class="text-[#1c1b1b]/40 hover:text-[#af101a] transition-colors font-['Manrope'] tracking-wide" href="contatti.html">Contatti</a>
+        </div>
+        <div class="text-[#1c1b1b]/40 font-['Manrope'] text-sm tracking-wide text-center mt-2">© 2025 Loft10. Tutti i diritti riservati.</div>
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-1 text-sm text-[#1c1b1b]/40">
+        <span>Piazza Cavagneria, 10</span><span>27100 Pavia (PV)</span>
+        <a class="hover:text-[#af101a] transition-colors" href="tel:+390382538236">0382 538236</a>
+        <a class="hover:text-[#af101a] transition-colors" href="mailto:info.loft10@gmail.com">info.loft10@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
+    // Handle hash-based tab switching
+    if (window.location.hash) {
+      const tab = window.location.hash.substring(1);
+      if (document.getElementById(tab)) switchTab(tab);
+    }
+  </script>
+
+</body>
+</html>

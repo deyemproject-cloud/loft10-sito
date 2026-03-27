@@ -272,35 +272,9 @@ body::after {
    Accessibility: Reduced Motion
    ============================================ */
 
+/* Reduced-motion: keep animations but make them instant/subtle */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  html {
     scroll-behavior: auto !important;
-  }
-
-  [data-animate] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .text-shimmer {
-    background: none !important;
-    -webkit-text-fill-color: currentColor !important;
-  }
-
-  body::after {
-    display: none !important;
-  }
-
-  .lightbox {
-    transition: none !important;
-  }
-  .lightbox img {
-    transition: none !important;
-    transform: none !important;
   }
 }

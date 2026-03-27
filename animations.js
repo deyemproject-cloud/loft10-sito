@@ -3,31 +3,22 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   // ---- Scroll-Reveal via IntersectionObserver ----
-  if (!prefersReducedMotion) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
     });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
 
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      revealObserver.observe(el);
-    });
-  } else {
-    // Immediately show everything if reduced motion
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      el.classList.add('is-visible');
-    });
-  }
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    revealObserver.observe(el);
+  });
 
   // ---- Counter Animation ----
   const counters = document.querySelectorAll('[data-counter]');
@@ -39,12 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const target = parseInt(el.dataset.counter, 10);
           const suffix = el.dataset.counterSuffix || '';
           const prefix = el.dataset.counterPrefix || '';
-
-          if (prefersReducedMotion) {
-            el.textContent = prefix + target + suffix;
-            counterObserver.unobserve(el);
-            return;
-          }
 
           const duration = 2000;
           const start = performance.now();
@@ -65,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Parallax-Lite ----
-  if (!prefersReducedMotion && window.innerWidth > 768) {
+  if (window.innerWidth > 768) {
     const parallaxElements = document.querySelectorAll('[data-parallax]');
     if (parallaxElements.length) {
       let ticking = false;
@@ -76,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             parallaxElements.forEach(el => {
               const speed = parseFloat(el.dataset.parallax) || 0.15;
               const rect = el.getBoundingClientRect();
-              // Only apply parallax when element is near viewport
               if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
                 el.style.transform = `translateY(${scrollY * speed}px)`;
               }
@@ -94,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabButtons = document.querySelectorAll('.tab-btn');
 
   if (tabContents.length && tabButtons.length) {
-    // Make switchTab available globally (replaces inline version)
     window.switchTab = function(tabId) {
       const currentActive = document.querySelector('.tab-content.active');
       const newTab = document.getElementById(tabId);
@@ -104,13 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tabButtons.forEach(btn => btn.classList.remove('active'));
       const targetBtn = document.querySelector('[data-tab="' + tabId + '"]');
       if (targetBtn) targetBtn.classList.add('active');
-
-      if (prefersReducedMotion) {
-        // Instant switch for reduced motion
-        if (currentActive) currentActive.classList.remove('active');
-        newTab.classList.add('active');
-        return;
-      }
 
       // Fade out current
       if (currentActive) {
@@ -123,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Fade in new
           newTab.classList.add('active');
-          // Force reflow to restart transition
-          newTab.offsetHeight;
+          newTab.offsetHeight; // Force reflow
           newTab.style.opacity = '1';
           newTab.style.transform = 'translateY(0)';
         }, 200);

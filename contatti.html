@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Contatti — Loft10 Lounge Caffè Pavia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="animations.css" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
@@ -50,7 +53,7 @@
 <body class="bg-surface text-on-surface antialiased overflow-x-hidden">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+  <nav class="anim-navbar fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
     <a href="index.html" class="flex flex-col leading-none no-underline">
       <div class="font-['Newsreader'] font-bold text-2xl tracking-tighter text-[#1c1b1b]">Loft10</div>
       <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Lounge Caffè</div>
@@ -67,7 +70,7 @@
         <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
         <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
       </div>
-      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-transform no-underline">Prenota ora</a>
+      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide btn-lift no-underline">Prenota ora</a>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]"><span class="material-symbols-outlined text-2xl">menu</span></button>
     </div>
   </nav>
@@ -83,16 +86,16 @@
 
   <main class="pt-28 pb-16">
     <div class="text-center px-6 mb-16">
-      <h1 class="text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Dove <span class="serif-italic text-primary">Trovarci</span></h1>
-      <p class="text-on-surface/60 font-body text-lg max-w-xl mx-auto">Nel cuore di Pavia, dietro il Duomo. Ti aspettiamo.</p>
+      <h1 class="anim-hero-line-1 text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Dove <span class="serif-italic text-primary">Trovarci</span></h1>
+      <p class="anim-hero-line-2 text-on-surface/60 font-body text-lg max-w-xl mx-auto">Nel cuore di Pavia, dietro il Duomo. Ti aspettiamo.</p>
     </div>
 
     <div class="container mx-auto px-6 max-w-5xl">
 
       <!-- Contact Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" data-stagger>
         <!-- Address -->
-        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4">
+        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4 card-lift icon-bounce" data-animate="fade-up">
           <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
             <span class="material-symbols-outlined text-3xl">location_on</span>
           </div>
@@ -101,7 +104,7 @@
           <a href="https://maps.google.com/?q=Piazza+Cavagneria+10+Pavia" target="_blank" rel="noopener" class="text-primary font-label font-bold text-sm uppercase tracking-widest hover:underline">Apri in Maps</a>
         </div>
         <!-- Phone -->
-        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4">
+        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4 card-lift icon-bounce" data-animate="fade-up">
           <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
             <span class="material-symbols-outlined text-3xl">call</span>
           </div>
@@ -113,7 +116,7 @@
           <a href="https://wa.me/393405750183" target="_blank" rel="noopener" class="text-primary font-label font-bold text-sm uppercase tracking-widest hover:underline">Scrivici su WhatsApp</a>
         </div>
         <!-- Email -->
-        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4">
+        <div class="bg-surface-container rounded-xl p-8 text-center flex flex-col items-center gap-4 card-lift icon-bounce" data-animate="fade-up">
           <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
             <span class="material-symbols-outlined text-3xl">mail</span>
           </div>
@@ -129,7 +132,7 @@
       </div>
 
       <!-- Hours -->
-      <div class="bg-primary rounded-xl p-10 md:p-12 text-on-primary mb-16 overflow-hidden relative">
+      <div class="bg-primary rounded-xl p-10 md:p-12 text-on-primary mb-16 overflow-hidden relative" data-animate="fade-up">
         <div class="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -mr-24 -mt-24"></div>
         <h2 class="text-3xl serif-bold italic mb-8 relative z-10">Orari di Apertura</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
@@ -151,7 +154,7 @@
       <!-- Map & Form -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Map -->
-        <div class="rounded-xl overflow-hidden h-[450px] bg-surface-container">
+        <div class="rounded-xl overflow-hidden h-[450px] bg-surface-container" data-animate="slide-in-left">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.8!2d9.1575!3d45.1847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787637e4f4f18a1%3A0x8e4e1b0f9b8e4e1b!2sPiazza%20Cavagneria%2C%2010%2C%2027100%20Pavia%20PV!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -159,7 +162,7 @@
         </div>
 
         <!-- Contact Form -->
-        <div class="bg-surface-container-low rounded-xl p-8 md:p-10">
+        <div class="bg-surface-container-low rounded-xl p-8 md:p-10" data-animate="slide-in-right">
           <h2 class="text-2xl serif-bold mb-6">Scrivici un messaggio</h2>
           <form onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Messaggio inviato!'; this.querySelector('.submit-btn').disabled=true;" class="space-y-5">
             <div>
@@ -178,7 +181,7 @@
               <label class="block font-label font-bold text-sm uppercase tracking-widest text-on-surface/40 mb-2">Messaggio</label>
               <textarea required rows="4" class="w-full px-5 py-3 rounded-xl border border-on-surface/10 bg-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body resize-none" placeholder="Come possiamo aiutarti?"></textarea>
             </div>
-            <button type="submit" class="submit-btn w-full bg-primary text-on-primary py-4 rounded-full font-label font-bold text-sm tracking-widest uppercase hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <button type="submit" class="submit-btn w-full bg-primary text-on-primary py-4 rounded-full font-label font-bold text-sm tracking-widest uppercase btn-lift">
               Invia Messaggio
             </button>
           </form>
@@ -217,5 +220,6 @@
     </div>
   </footer>
 
+  <script src="animations.js" defer></script>
 </body>
 </html>

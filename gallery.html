@@ -4,8 +4,11 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Gallery — Loft10 Lounge Caffè Pavia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="animations.css" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -45,18 +48,13 @@
     .serif-bold { font-family: 'Newsreader', serif; font-weight: 700; }
     .mobile-menu { display: none; }
     .mobile-menu.open { display: flex; }
-    /* Lightbox */
-    .lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 1rem; }
     .gallery-item { cursor: pointer; }
-    .gallery-item:hover img { transform: scale(1.05); }
   </style>
 </head>
 <body class="bg-surface text-on-surface antialiased overflow-x-hidden">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+  <nav class="anim-navbar fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
     <a href="index.html" class="flex flex-col leading-none no-underline">
       <div class="font-['Newsreader'] font-bold text-2xl tracking-tighter text-[#1c1b1b]">Loft10</div>
       <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Lounge Caffè</div>
@@ -73,7 +71,7 @@
         <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
         <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
       </div>
-      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-transform no-underline">Prenota ora</a>
+      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide btn-lift no-underline">Prenota ora</a>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]"><span class="material-symbols-outlined text-2xl">menu</span></button>
     </div>
   </nav>
@@ -89,48 +87,60 @@
 
   <main class="pt-28 pb-16">
     <div class="text-center px-6 mb-16">
-      <h1 class="text-5xl md:text-7xl serif-bold tracking-tighter mb-4">La Nostra <span class="serif-italic text-primary">Gallery</span></h1>
-      <p class="text-on-surface/60 font-body text-lg max-w-xl mx-auto">Scorci di vita quotidiana al Loft10. Design, gusto e atmosfera.</p>
+      <h1 class="anim-hero-line-1 text-5xl md:text-7xl serif-bold tracking-tighter mb-4">La Nostra <span class="serif-italic text-primary">Gallery</span></h1>
+      <p class="anim-hero-line-2 text-on-surface/60 font-body text-lg max-w-xl mx-auto">Scorci di vita quotidiana al Loft10. Design, gusto e atmosfera.</p>
     </div>
 
     <!-- Photo Grid -->
     <div class="container mx-auto px-6 max-w-6xl">
-      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" data-stagger>
 
-        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid" onclick="openLightbox(this.querySelector('img').src)">
-          <img class="w-full h-auto object-cover transition-transform duration-500" alt="Loft10 interior — vintage typewriter and moka pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy1jprtFJLthxl94k3on_fJkUapyqRxwBc8mTa9gnrZNyYynGwAMy1a66fytS3umxFePG6ErWTLb4eZWuBymx5t_-G1wS1XtXaSx1wME5dy5XnZAJ0BSTl8RZRMOCHFG6-F9DSTNnr_V09RkSYaTas32uTR8G1ocaHr1qI_BobMijhOjIfkHuoFceMvwezc_-MfNsU9iYccniC4iuXZzqPTuMhQLbeIRdIVMu_S6o2UIbxAuZG1D14_E3nPG8cBtBbzw-PBUdLGBw" />
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 interior" src="https://weur-cdn.piatti.menu/storage/media/company_gallery/101374704/conversions/contribution_gallery.jpg" loading="lazy" />
         </div>
 
-        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid" onclick="openLightbox(this.querySelector('img').src)">
-          <img class="w-full h-auto object-cover transition-transform duration-500" alt="Specialty coffee at Loft10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQlpNRkgMrEa5ecE4-Z87I2HXlulv28QrmGOi6z6sJ6iBjWLbYszgHS8uSWo0QPxafWp8cXg6ia1RCLeAVAlv8PObvSDSKyi7sedAW6SJ_D5h7OtE66jZ6oowKJ029r3FHutYgLHuQR_dUalUZaySgKj0O4J0LZd86Codyd8g3CzrPWl7_UVc2f6O-RdaCrvpRNMtAHI0-Pu5-Cy0MWQLOV-bRfWTU6-aZBn6lxCxN_SE6cS-CeOGxkzy7g2i0s3ydOU4Bp5mh6Vc" />
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 ambiente" src="https://img.piatti.menu/storage/media/company_gallery/4087184/conversions/contribution_gallery.jpg" loading="lazy" />
         </div>
 
-        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid" onclick="openLightbox(this.querySelector('img').src)">
-          <img class="w-full h-auto object-cover transition-transform duration-500" alt="Signature cocktail at Loft10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQCmAHIg4YY_W754RKrZcvHJf7fWDaIoQvtJcKisFlhBS3SK59yXJe76UGobRAyoTbV_HA0CKqKIeU25FJEFSjCJyWktSsmXSpG0WBrPX7adXWeIQ0VuYWuPSwofYF7GuHIkSTJPIq4z6mYouy3SjeModE77-2938YKvB4dWkfVrUhcT09YT00bYPIKY-jknClSHsX0y6a16Vvq8x2QGVBiA4hFub_sQKs8JcK9aFqYC1L2hqlziCmqnulYX3CNprJG3mpxaDCKQU" />
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 cocktail e atmosfera" src="https://img.piatti.menu/storage/media/company_gallery/4586978/conversions/contribution_gallery.jpg" loading="lazy" />
         </div>
 
-        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid" onclick="openLightbox(this.querySelector('img').src)">
-          <img class="w-full h-auto object-cover transition-transform duration-500" alt="Loft10 coffee bar area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKNK1zvur7DcV-gLYRjBnSm4ppd9VJ8RESlqdjH7tH_JCnwWdf_mBSq1vPZKOhHL4p-GvnUsUqHfsjEz0KUh5SaP_Ke7pLBxdSLXL_fUpT0VbTE6Yy_pdVB116HlPq69pJ5ltN-3SxgK9kvIeEziLtzCUos_ch6EdhKycYx4usaMO7ZPPKOWSjzOLRXkLAAYLIHW5wjXx3k_HfMNFN97-ujJKnwLaIjCIrg0xaG0nFeJNt7kEJoITHSPMriA-o7LVPpridwXq0I7o" />
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 bar area" src="https://weur-cdn.piatti.menu/storage/media/company_gallery/101374742/conversions/contribution_gallery.jpg" loading="lazy" />
         </div>
 
-        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid" onclick="openLightbox(this.querySelector('img').src)">
-          <img class="w-full h-auto object-cover transition-transform duration-500" alt="Premium spirits collection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCezHAdzTgYxNkQ2o34EL2JiSKvcYdL-x53A1SK_4HNJkcIXKLs6R4eFBWXQmuSIarY41S2RCCM39eycIkFTP_jf2g89G9LFvoPV0i_thIAhFv2UbH-WIYeM5HMHgbs3VdxXV14MUwoGDsIu9Yy1I40uX-2iATlwQQtpTzwKuuVyYVz8kB0WSZ0k9DijAZdj1mMzUIJVJf3E55XkWQYvwj_AK-mKzC58tzbu5Z3U6VHoPh_MlpfyZQBtNAEp_TWMYBzHyni_oyY454" />
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 dettagli" src="https://weur-cdn.piatti.menu/storage/media/company_gallery/101374755/conversions/contribution_gallery.jpg" loading="lazy" />
         </div>
 
-        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid" onclick="openLightbox(this.querySelector('img').src)">
-          <img class="w-full h-auto object-cover transition-transform duration-500" alt="Gourmet food bites" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVfUVgQqDf3bsg4FgfbGYxKrqCENaRgNCScq3v39YhQVyVvy7C-wZZj3gVqctBnD7nCTWSamuPyFBwm6xE5M0P8M75ISFobFNczHll2yCqT9uBQx1lmmZPgPJ0oB2BbSzn8J_LEFV6Sm8cjk9tRNni7GKkNYJJEf5WL2nGbV_c-oLD1lIlTIkD_NLd1Hi7YXK_XwHGPPOn0rZz_82CzKMJgG5SoLMbC2zNUFloL13b792dsdUNxCfnWW-2FIF2vRGjM6VIz1sdeWI" />
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 piatti" src="https://weur-cdn.piatti.menu/storage/media/company_gallery/101374757/conversions/contribution_gallery.jpg" loading="lazy" />
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 spazio" src="https://weur-cdn.piatti.menu/storage/media/company_gallery/92618807/conversions/contribution_gallery.jpg" loading="lazy" />
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 lounge" src="https://weur-cdn.piatti.menu/storage/media/company_gallery/101374751/conversions/contribution_gallery.jpg" loading="lazy" />
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden break-inside-avoid img-zoom" data-animate="scale-up" onclick="openLightbox(this.querySelector('img').src)">
+          <img class="w-full h-auto object-cover" alt="Loft10 esterno Piazza Cavagneria" src="https://lh3.googleusercontent.com/p/AF1QipPfz-d1SpGLM6IR3hM16x2nfIxCBTzyxDsgq6vj" loading="lazy" />
         </div>
 
       </div>
     </div>
 
     <!-- Instagram CTA -->
-    <div class="container mx-auto max-w-2xl px-6 mt-24 text-center">
-      <div class="bg-surface-container-high rounded-xl p-12">
+    <div class="container mx-auto max-w-2xl px-6 mt-24 text-center" data-animate="fade-up">
+      <div class="bg-surface-container-high rounded-xl p-12 card-lift">
         <span class="material-symbols-outlined text-5xl text-primary mb-4">camera_alt</span>
         <h2 class="text-3xl serif-bold mb-4">Seguici su Instagram</h2>
         <p class="text-on-surface/60 font-body mb-8">Scopri i momenti quotidiani, i nuovi piatti e gli eventi speciali del Loft10.</p>
-        <a href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener" class="bg-primary text-on-primary px-8 py-4 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all no-underline inline-block">
+        <a href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener" class="bg-primary text-on-primary px-8 py-4 rounded-full font-label font-bold text-sm tracking-wide btn-lift no-underline inline-block">
           @loft10pavia
         </a>
       </div>
@@ -142,7 +152,7 @@
     <button class="absolute top-6 right-6 text-white/80 hover:text-white z-10"><span class="material-symbols-outlined text-4xl">close</span></button>
     <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white z-10" onclick="event.stopPropagation(); navigateLightbox(-1)"><span class="material-symbols-outlined text-5xl">chevron_left</span></button>
     <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white z-10" onclick="event.stopPropagation(); navigateLightbox(1)"><span class="material-symbols-outlined text-5xl">chevron_right</span></button>
-    <img id="lightboxImg" src="" alt="Lightbox image" />
+    <img id="lightboxImg" src="" alt="Lightbox image" onclick="event.stopPropagation()" />
   </div>
 
   <!-- Footer -->
@@ -202,6 +212,7 @@
       if (e.key === 'ArrowRight') navigateLightbox(1);
     });
   </script>
+  <script src="animations.js" defer></script>
 
 </body>
 </html>

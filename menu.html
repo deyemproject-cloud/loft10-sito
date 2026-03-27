@@ -4,8 +4,11 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Menu — Loft10 Lounge Caffè Pavia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="animations.css" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -45,15 +48,16 @@
     .serif-bold { font-family: 'Newsreader', serif; font-weight: 700; }
     .mobile-menu { display: none; }
     .mobile-menu.open { display: flex; }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .tab-content { display: none; opacity: 0; }
+    .tab-content.active { display: block; opacity: 1; }
     .tab-btn.active { color: #af101a; border-bottom-color: #af101a; }
+    .tab-bar { scroll-behavior: smooth; }
   </style>
 </head>
 <body class="bg-surface text-on-surface antialiased overflow-x-hidden">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+  <nav class="anim-navbar fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 bg-white/70 backdrop-blur-xl rounded-full mt-4 mx-4 md:mx-auto max-w-5xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
     <a href="index.html" class="flex flex-col leading-none no-underline">
       <div class="font-['Newsreader'] font-bold text-2xl tracking-tighter text-[#1c1b1b]">Loft10</div>
       <div class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#1c1b1b]/60">Lounge Caffè</div>
@@ -70,7 +74,7 @@
         <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://wa.me/393405750183" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">chat</span></a>
         <a class="text-[#1c1b1b] hover:text-[#af101a] transition-colors" href="https://www.instagram.com/loft10pavia/" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
       </div>
-      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-transform no-underline">Prenota ora</a>
+      <a href="contatti.html" class="hidden md:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label font-bold text-sm tracking-wide btn-lift no-underline">Prenota ora</a>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-[#1c1b1b]">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
@@ -89,13 +93,13 @@
   <main class="pt-28 pb-16">
     <!-- Header -->
     <div class="text-center px-6 mb-8">
-      <h1 class="text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Il Nostro <span class="serif-italic text-primary">Menu</span></h1>
-      <p class="text-on-surface/60 font-body text-lg max-w-xl mx-auto">Dalla colazione alla tarda sera, ogni momento ha il suo sapore al Loft10.</p>
+      <h1 class="anim-hero-line-1 text-5xl md:text-7xl serif-bold tracking-tighter mb-4">Il Nostro <span class="serif-italic text-primary">Menu</span></h1>
+      <p class="anim-hero-line-2 text-on-surface/60 font-body text-lg max-w-xl mx-auto">Dalla colazione alla tarda sera, ogni momento ha il suo sapore al Loft10.</p>
     </div>
 
     <!-- Tab Navigation -->
     <div class="sticky top-[72px] z-40 bg-surface/80 backdrop-blur-xl border-b border-on-surface/5">
-      <div class="container mx-auto px-6 flex overflow-x-auto gap-0 no-scrollbar">
+      <div class="container mx-auto px-6 flex overflow-x-auto gap-0 no-scrollbar tab-bar">
         <button onclick="switchTab('caffetteria')" class="tab-btn active flex-shrink-0 px-6 py-4 font-label font-bold text-sm uppercase tracking-widest border-b-2 border-transparent text-[#1c1b1b]/40 hover:text-[#af101a] transition-all whitespace-nowrap" data-tab="caffetteria">
           <span class="material-symbols-outlined text-base align-middle mr-1">coffee</span> Caffetteria
         </button>
@@ -118,7 +122,7 @@
 
         <!-- Caffè -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Caffè</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Caffè</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-4">
             <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><span class="serif-bold text-lg">Caffè</span><span class="font-label font-bold text-primary">€1.30</span></div>
@@ -141,7 +145,7 @@
 
         <!-- Cioccolata Calda -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">La Cioccolata</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">La Cioccolata</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-surface-container-low rounded-xl p-6">
@@ -169,7 +173,7 @@
 
         <!-- Tè & Tisane -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Tè, Tisane & Infusi</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Tè, Tisane & Infusi</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-surface-container-low rounded-xl p-6">
@@ -241,7 +245,7 @@
 
         <!-- Primi -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Primi</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Primi</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-4">
             <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Risotto Carnaroli della tradizione</span><br><span class="text-on-surface/50 text-sm">salsiccia e bonarda</span></div><span class="font-label font-bold text-primary">€11</span></div>
@@ -259,7 +263,7 @@
 
         <!-- Secondi -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Secondi</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Secondi</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-4">
             <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Tagliere di salumi con gnocco fritto</span></div><span class="text-on-surface/40 text-xs">allergeni: 7</span></div>
@@ -272,7 +276,7 @@
 
         <!-- Insalate -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Insalate</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Insalate</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-surface-container-low rounded-xl p-6"><div class="flex justify-between items-start mb-2"><h3 class="serif-bold text-xl">Ceci Greca</h3><span class="font-label font-bold text-primary">€11</span></div></div>
@@ -284,7 +288,7 @@
 
         <!-- Panini -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Panini & Rotoli</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Panini & Rotoli</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-4">
             <div class="flex justify-between items-baseline border-b border-on-surface/5 pb-3"><div><span class="serif-bold text-lg">Salmone</span><br><span class="text-on-surface/50 text-sm">Philadelphia, insalata, zucchine grigliate</span></div><span class="text-on-surface/40 text-xs">allergeni: 1, 7</span></div>
@@ -298,7 +302,7 @@
 
         <!-- Hamburger -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Hamburger</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Hamburger</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Classici</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -325,7 +329,7 @@
 
         <!-- Club Sandwich -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Club Sandwich</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Club Sandwich</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="flex justify-between items-center bg-surface-container-low rounded-xl px-6 py-4">
             <div><span class="serif-bold text-lg">Club Sandwich</span><br><span class="text-on-surface/50 text-sm">con pane ai cereali</span></div>
@@ -336,7 +340,7 @@
         <!-- Brunch -->
         <div class="mb-16">
           <div class="bg-primary/5 rounded-xl p-8 mb-8">
-            <h2 class="text-3xl serif-bold mb-2">Brunch</h2>
+            <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Brunch</h2>
             <p class="text-on-surface/60 font-label font-bold text-sm uppercase tracking-widest">Servito dalle 9:00 alle 14:30</p>
           </div>
 
@@ -383,7 +387,7 @@
 
         <!-- Cocktails Classici -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Cocktails</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Cocktails</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Americano</h3><span class="font-label font-bold text-primary">€8</span></div><p class="text-on-surface/50 text-sm">Carpano rosso, Bitter rosso, seltz</p></div>
@@ -416,7 +420,7 @@
 
         <!-- Mocktails -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Mocktails <span class="text-on-surface/40 text-lg serif-italic">analcolici</span></h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Mocktails <span class="text-on-surface/40 text-lg serif-italic">analcolici</span></h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-surface-container-low rounded-xl p-5"><div class="flex justify-between items-start mb-1"><h3 class="serif-bold text-lg">Loft 10</h3><span class="font-label font-bold text-primary">€7</span></div><p class="text-on-surface/50 text-sm">Limone, succo arancia, zenzero, curcuma, pepe di cayenna</p></div>
@@ -431,7 +435,7 @@
 
         <!-- Gin & Tonic -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Gin & Tonic</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Gin & Tonic</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="overflow-x-auto">
             <table class="w-full text-left">
@@ -476,7 +480,7 @@
 
         <!-- Birre -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Birre</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Birre</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
 
           <h3 class="serif-italic text-xl text-on-surface/60 mb-4">Alla Spina</h3>
@@ -505,7 +509,7 @@
 
         <!-- Bollicine -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Bollicine d'Italia</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Bollicine d'Italia</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-5">
             <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Nature</h3><div class="text-right"><span class="font-label font-bold text-primary">€37</span><span class="text-on-surface/40 text-sm ml-2">calice €8</span></div></div><p class="text-on-surface/50 text-sm">Pinot Nero, Chardonnay · <span class="serif-italic">Monsupello</span></p></div>
@@ -522,7 +526,7 @@
 
         <!-- Bianchi -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Bianchi d'Italia</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Bianchi d'Italia</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-5">
             <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Riesling Renano</h3><div class="text-right"><span class="font-label font-bold text-primary">€21</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Riesling Renano · <span class="serif-italic">Monsupello</span></p></div>
@@ -539,7 +543,7 @@
 
         <!-- Rossi -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Rossi d'Italia</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Rossi d'Italia</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-5">
             <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Bonarda Calcababio</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Croatina · <span class="serif-italic">Monsupello</span></p></div>
@@ -558,7 +562,7 @@
 
         <!-- Vini da Dessert -->
         <div class="mb-16">
-          <h2 class="text-3xl serif-bold mb-2">Vini da Dessert</h2>
+          <h2 class="text-3xl serif-bold mb-2" data-animate="fade-up">Vini da Dessert</h2>
           <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
           <div class="space-y-5">
             <div class="border-b border-on-surface/5 pb-4"><div class="flex justify-between items-start"><h3 class="serif-bold text-lg">Felling</h3><div class="text-right"><span class="font-label font-bold text-primary">€18</span><span class="text-on-surface/40 text-sm ml-2">calice €6</span></div></div><p class="text-on-surface/50 text-sm">Moscato · <span class="serif-italic">Monsupello</span></p></div>
@@ -599,20 +603,7 @@
     </div>
   </footer>
 
-  <script>
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
-      window.scrollTo({ top: 200, behavior: 'smooth' });
-    }
-    // Handle hash-based tab switching
-    if (window.location.hash) {
-      const tab = window.location.hash.substring(1);
-      if (document.getElementById(tab)) switchTab(tab);
-    }
-  </script>
+  <script src="animations.js" defer></script>
 
 </body>
 </html>

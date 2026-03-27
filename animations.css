@@ -1,0 +1,306 @@
+/* ============================================
+   Loft10 — Animation System
+   ============================================ */
+
+/* --- Custom Properties --- */
+:root {
+  --anim-duration: 0.7s;
+  --anim-duration-fast: 0.4s;
+  --anim-duration-slow: 1s;
+  --anim-easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --anim-distance: 40px;
+  --anim-stagger: 0.12s;
+  --primary: #af101a;
+  --primary-glow: rgba(175, 16, 26, 0.15);
+}
+
+/* --- Smooth Scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   Scroll-Reveal System
+   ============================================ */
+
+[data-animate] {
+  opacity: 0;
+  transition: opacity var(--anim-duration) var(--anim-easing),
+              transform var(--anim-duration) var(--anim-easing);
+  will-change: opacity, transform;
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(var(--anim-distance));
+}
+
+[data-animate="fade-in"] {
+  transform: none;
+}
+
+[data-animate="slide-in-left"] {
+  transform: translateX(calc(-1 * var(--anim-distance)));
+}
+
+[data-animate="slide-in-right"] {
+  transform: translateX(var(--anim-distance));
+}
+
+[data-animate="scale-up"] {
+  transform: scale(0.92);
+}
+
+/* Revealed state */
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* --- Staggered Children --- */
+[data-stagger] > [data-animate]:nth-child(1) { transition-delay: 0s; }
+[data-stagger] > [data-animate]:nth-child(2) { transition-delay: var(--anim-stagger); }
+[data-stagger] > [data-animate]:nth-child(3) { transition-delay: calc(var(--anim-stagger) * 2); }
+[data-stagger] > [data-animate]:nth-child(4) { transition-delay: calc(var(--anim-stagger) * 3); }
+[data-stagger] > [data-animate]:nth-child(5) { transition-delay: calc(var(--anim-stagger) * 4); }
+[data-stagger] > [data-animate]:nth-child(6) { transition-delay: calc(var(--anim-stagger) * 5); }
+[data-stagger] > [data-animate]:nth-child(7) { transition-delay: calc(var(--anim-stagger) * 6); }
+[data-stagger] > [data-animate]:nth-child(8) { transition-delay: calc(var(--anim-stagger) * 7); }
+[data-stagger] > [data-animate]:nth-child(9) { transition-delay: calc(var(--anim-stagger) * 8); }
+[data-stagger] > [data-animate]:nth-child(10) { transition-delay: calc(var(--anim-stagger) * 9); }
+
+/* ============================================
+   Page-Load Entrance Animations
+   ============================================ */
+
+@keyframes hero-text-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes navbar-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-image-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float-icon {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.anim-hero-line-1 {
+  animation: hero-text-up 0.8s var(--anim-easing) 0.1s both;
+}
+.anim-hero-line-2 {
+  animation: hero-text-up 0.8s var(--anim-easing) 0.25s both;
+}
+.anim-hero-line-3 {
+  animation: hero-text-up 0.8s var(--anim-easing) 0.4s both;
+}
+.anim-hero-line-4 {
+  animation: hero-text-up 0.8s var(--anim-easing) 0.55s both;
+}
+.anim-navbar {
+  animation: navbar-down 0.6s var(--anim-easing) 0s both;
+}
+.anim-hero-image {
+  animation: hero-image-in 1s var(--anim-easing) 0.3s both;
+}
+.anim-float {
+  animation: float-icon 3s ease-in-out infinite;
+}
+
+/* ============================================
+   Micro-Interactions
+   ============================================ */
+
+/* Button lift + shadow */
+.btn-lift {
+  transition: transform 0.3s var(--anim-easing),
+              box-shadow 0.3s var(--anim-easing),
+              background-color 0.3s ease;
+}
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(175, 16, 26, 0.3);
+}
+.btn-lift:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 8px rgba(175, 16, 26, 0.2);
+}
+
+/* Card lift + glow */
+.card-lift {
+  transition: transform 0.4s var(--anim-easing),
+              box-shadow 0.4s var(--anim-easing);
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1),
+              0 0 0 1px var(--primary-glow);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s var(--anim-easing);
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Icon bounce on hover */
+.icon-bounce:hover .material-symbols-outlined {
+  animation: icon-bounce-kf 0.5s var(--anim-easing);
+}
+@keyframes icon-bounce-kf {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-6px); }
+  60%      { transform: translateY(-3px); }
+}
+
+/* Enhanced image zoom */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s var(--anim-easing);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* ============================================
+   Special Effects
+   ============================================ */
+
+/* Shimmer on section titles */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #1c1b1b 0%,
+    #1c1b1b 40%,
+    #af101a 50%,
+    #1c1b1b 60%,
+    #1c1b1b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   Lightbox Transitions
+   ============================================ */
+
+.lightbox {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  pointer-events: none;
+}
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.lightbox img {
+  transform: scale(0.92);
+  transition: transform 0.4s var(--anim-easing);
+}
+.lightbox.open img {
+  transform: scale(1);
+}
+
+/* ============================================
+   Menu Tab Transitions
+   ============================================ */
+
+.tab-content {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s var(--anim-easing),
+              transform 0.35s var(--anim-easing);
+}
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tab button hover/active effects */
+.tab-btn {
+  transition: color 0.3s ease, border-bottom-color 0.3s ease, background-color 0.3s ease;
+}
+.tab-btn:hover:not(.active) {
+  background-color: rgba(175, 16, 26, 0.05);
+}
+
+/* ============================================
+   Accessibility: Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .text-shimmer {
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+  }
+
+  body::after {
+    display: none !important;
+  }
+
+  .lightbox {
+    transition: none !important;
+  }
+  .lightbox img {
+    transition: none !important;
+    transform: none !important;
+  }
+}
